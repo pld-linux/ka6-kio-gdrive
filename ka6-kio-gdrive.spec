@@ -104,5 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/accounts/services/kde/google-drive.service
 %{_datadir}/knotifications6/gdrive.notifyrc
 %{_datadir}/metainfo/org.kde.kio_gdrive.metainfo.xml
+%dir %{_datadir}/purpose
 %{_datadir}/purpose/purpose_gdrive_config.qml
 %{_datadir}/remoteview/gdrive-network.desktop
