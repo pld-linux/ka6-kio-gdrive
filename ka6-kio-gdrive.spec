@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.0
+%define		kdeappsver	25.04.1
 %define		kframever	6.8
 %define		qtver		6.8
 %define		kaname		kio-gdrive
 Summary:	kio-gdrive
 Name:		ka6-%{kaname}
-Version:	25.04.0
+Version:	25.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d78f867626ba3c2a7415da5a60674cec
+# Source0-md5:	d271b137628b9416960d0f103b66442f
 URL:		https://www.kde.org/
 BuildRequires:	OpenEXR-devel >= 3.0.5
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -48,19 +48,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 kio-gdrive.
 
-%package devel
-Summary:	Header files for %{kaname} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
-Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Obsoletes:	ka5-%{kaname}-devel < %{version}
-
-%description devel
-Header files for %{kaname} development.
-
-%description devel -l pl.UTF-8
-Pliki nagłówkowe dla programistów używających %{kaname}.
-
 %prep
 %setup -q -n %{kaname}-%{version}
 
@@ -89,9 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
