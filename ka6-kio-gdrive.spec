@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.0
+%define		kdeappsver	25.08.1
 %define		kframever	6.8
 %define		qtver		6.8
 %define		kaname		kio-gdrive
 Summary:	kio-gdrive
 Name:		ka6-%{kaname}
-Version:	25.08.0
+Version:	25.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	80a9b073f392c29ff4b16ea1aaddce7a
+# Source0-md5:	158a52fd6805bf2656eecf8ad6a97578
 URL:		https://www.kde.org/
 BuildRequires:	OpenEXR-devel >= 3.0.5
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -42,6 +42,7 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+%requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
