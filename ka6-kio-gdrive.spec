@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	6.8
 %define		qtver		6.8
 %define		kaname		kio-gdrive
 Summary:	kio-gdrive
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	525b01db4f0ff5a9697d5a7959dd0acd
+# Source0-md5:	e88fa57a71b1027b4cedb62978f8f8a0
 URL:		https://www.kde.org/
 BuildRequires:	OpenEXR-devel >= 3.0.5
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -81,11 +81,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %doc HACKING README.md README.packagers
-%attr(755,root,root) %{_libdir}/qt6/plugins/kaccounts/daemonplugins/gdrive.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kfileitemaction/gdrivecontextmenuaction.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/gdrive.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/propertiesdialog/gdrivepropertiesplugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/purpose/purpose_gdrive.so
+%{_libdir}/qt6/plugins/kaccounts/daemonplugins/gdrive.so
+%{_libdir}/qt6/plugins/kf6/kfileitemaction/gdrivecontextmenuaction.so
+%{_libdir}/qt6/plugins/kf6/kio/gdrive.so
+%{_libdir}/qt6/plugins/kf6/propertiesdialog/gdrivepropertiesplugin.so
+%{_libdir}/qt6/plugins/kf6/purpose/purpose_gdrive.so
 %{_datadir}/accounts/services/kde/google-drive.service
 %{_datadir}/knotifications6/gdrive.notifyrc
 %{_datadir}/metainfo/org.kde.kio_gdrive.metainfo.xml
