@@ -47,7 +47,14 @@ Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-kio-gdrive.
+Linux KIO GDrive is a KIO worker that enables KIO-aware applications
+(such as Dolphin, Kate or Gwenview) to access and edit Google Drive
+files on the cloud.
+
+%description -l pl.UTF-8
+KIO GDrive jest pracownikiem KIO, który umożliwia aplikacjom świadomym
+KIO (takim jak Dolphin, Kate lub Gwenview) na dostęp i edycję plików w
+chmurze Dysku Google.
 
 %prep
 %setup -q -n %{kaname}-%{version}
